@@ -4,7 +4,7 @@
   --h1-color: #393C41;
   --h2-color: #6E7378;
   --btn-dark-bg: rgba(23, 26, 32, 0.8);
-  --btn-light-bg:rgba(255, 255, 255, 0.65);
+  --btn-light-bg:rgba(255, 255, 255, 0.55);
   --btn-dark-color:#FFF;
   --btn-light-color: #000;
   --bg-image: url(../images/bg.jpg);
@@ -30,7 +30,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
+  height: 100px;
   position: fixed;
   left: 0;
   right: 0;
@@ -41,7 +41,7 @@ header li {
   list-style: none;
 }
 header .logo {
-  width: 150px;
+  width: 200px;
   margin-left: 20px;
 }
 header .middle ul {
@@ -55,6 +55,13 @@ header .middle a {
   color: var(--header-color);
   text-transform: uppercase;
 }
+header .middle a:hover  {
+  color: rgb(32, 104, 236);
+  border-bottom: 1px solid rgb(43, 181, 236);
+}
+header .rightside {
+  margin-right: 30px;
+}
 header .rightside ul {
   display: flex;
 }
@@ -65,6 +72,13 @@ header .rightside a {
   text-decoration: none;
   color: var(--header-color);
   text-transform: uppercase;
+}
+header .rightside li a:hover {
+  color: rgb(32, 104, 236);
+  border-bottom: 1px solid rgb(43, 181, 236);
+}
+header .menu {
+  display: none;
 }
 header .menu--icon {
   width: 18px;
@@ -109,6 +123,9 @@ main h2 {
 main h2 a {
   color: var(--h1-color);
 }
+main h2 a:hover {
+  color: rgb(32, 104, 236);
+}
 
 /* FOOTER */
 footer {
@@ -136,9 +153,15 @@ footer .btn--dark {
   background-color: var(--btn-dark-bg);
   color: var(--btn-dark-color);
 }
+footer .btn--dark:hover {
+  background-color: rgb(80, 82, 82);
+}
 footer .btn--light {
   background-color: var(--btn-light-bg);
   color: var(--btn-light-color);
+}
+footer .btn--light:hover {
+  background-color: rgb(226, 231, 231);
 }
 footer .arrow--area {
   display: flex;
@@ -164,18 +187,36 @@ footer .arrow {
   animation-iteration-count: infinite;
 }
 
+
+
+
+
+
+
 /* MEDIA QUERIES */
-@media (max-width: 1200px) {
-  header .middle {
+@media (max-width: 1024px) {
+  /*header .rightside li {
     display: none;
-  }
-  header .rightside li {
-    display: none;
-  }
+  }*/
   header .rightside li.menu {
-    display: block;
+    display: none;
     margin-right: 20px;
   }
+  header .rightside li a {
+    font-size: 12px;
+  }
+  header .rightside li a:hover {
+    color: rgb(32, 104, 236);
+    border-bottom: 1px solid rgb(43, 181, 236);
+  }
+  header .middle a {
+    font-size: 12px;
+  }
+  header .middle a:hover  {
+    color: rgb(32, 104, 236);
+    border-bottom: 1px solid rgb(43, 181, 236);
+  }
+
   main {
     background-image: var(--bg-image);
     background-size: cover;
@@ -183,7 +224,16 @@ footer .arrow {
     height: 100vh;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  header .middle {
+    margin-right: 60px;
+  }
+  header .middle a {
+    font-size: 14px;
+  }
+  header .rightside {
+    display: none;
+  }
   main {
     background-image: var(--bg-image2);
   }
@@ -197,11 +247,20 @@ footer .arrow {
   }
 }
 @media (max-width: 320px) {
+  header .middle {
+    display: none;
+  }
   main {
     background-image: var(--bg-image2);
     background-size: inherit;
     background-position: center;
     height: 100vh;
+  }
+  main h1 {
+    font-size: 30px;
+  }
+  main h2 {
+    font-size: 12px;
   }
   footer .buttons--area {
     flex-direction: column;
